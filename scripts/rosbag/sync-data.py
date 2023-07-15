@@ -9,7 +9,7 @@
 # Copyright (C) 2018 Santiago Cortes
 #
 # This software is distributed under the GNU General Public 
-# Licence (version 2 or later); please refer to the file 
+# License (version 2 or later); please refer to the file 
 # Licence.txt, included with the software, for details.
 
 import sys
@@ -20,6 +20,9 @@ import numpy as np
 folder= sys.argv[1]
 for i in range(1,24):  
     #Read data
+    if len(sys.argv) > 2 and i != int(sys.argv[2]):
+        print("i = " + str(i) + " and sys.argv[2]= " + str(sys.argv[2]))
+        continue
     path= folder+'/advio-'+str(i).zfill(2)+'/iphone/arkit.csv'
     arkit=pd.read_csv(path,names=list('tabcdefg'))
     path= folder+'/advio-'+str(i).zfill(2)+'/iphone/accelerometer.csv'
@@ -50,4 +53,5 @@ for i in range(1,24):
     #sort to time vector
     full = full[full[:,0].argsort()]
     path= folder+'/advio-'+str(i).zfill(2)+'/iphone/imu-gyro.csv'
+    print("saved at " + path)
     np.savetxt(path, full, delimiter=",",fmt='%.6f')
