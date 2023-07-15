@@ -1,0 +1,21 @@
+%YAML:1.0
+
+#imu parameters
+
+imu_topic: "/imu0"
+
+acc_n_x: 0.1272684824171412           # accelerometer measurement noise standard deviation. #0.2   0.04
+acc_n_y: 0.12132383404667242          # accelerometer measurement noise standard deviation. #0.2   0.04
+acc_n_z: 0.12812291743416033          # accelerometer measurement noise standard deviation. #0.2   0.04
+
+gyr_n_x: 0.0014969231576060441        # gyroscope measurement noise standard deviation.     #0.05  0.004
+gyr_n_y: 0.0013201612227551885         # gyroscope measurement noise standard deviation.     #0.05  0.004
+gyr_n_z: 0.0014978890011864304         # gyroscope measurement noise standard deviation.     #0.05  0.004
+
+acc_w_x: 8.1668223102475152e-03       # accelerometer bias random work noise standard deviation.  #0.02
+acc_w_y: 8.0905711461102278e-03         # accelerometer bias random work noise standard deviation.  #0.02
+acc_w_z: 1.3190265349254486e-02         # accelerometer bias random work noise standard deviation.  #0.02
+
+gyr_w_x: 5.4212562060394214e-05      # gyroscope bias random work noise standard deviation.     #4.0e-5
+gyr_w_y: 5.9613275788162096e-05      # gyroscope bias random work noise standard deviation.     #4.0e-5
+gyr_w_z: 3.3246558690517819e-06       # gyroscope bias random work noise standard deviation.     #4.0e-5

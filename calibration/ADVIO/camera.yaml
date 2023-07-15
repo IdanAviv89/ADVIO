@@ -1,0 +1,40 @@
+%YAML:1.0
+
+image_topic: "/cam0/image_raw"
+image_width: 720
+image_height: 1280
+fisheye: 0
+flip_image: 0
+
+FeatureTracker/show_image: 1
+
+#camera calibration
+model_type: PINHOLE
+camera_name: camera
+distortion_parameters:
+   k1: 0.0478
+   k2: 0.0339
+   p1: -0.00033
+   p2: -0.00091
+projection_parameters:
+   fx: 1077.2
+   fy: 1079.3
+   cx: 362.145
+   cy: 636.3873
+
+
+#Rotation from camera frame to imu frame, imu^R_cam
+extrinsicRotation: !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [0.9999763379093255, -0.004079205042965442,-0.005539287650170447,
+         -0.004066386342107199, -0.9999890330121858,0.0023234365646622014, 
+         -0.00554870467502187, -0.0023008567036498766,-0.9999819588046867]
+
+#Translation from camera frame to imu frame, imu^T_cam
+extrinsicTranslation: !!opencv-matrix
+   rows: 3
+   cols: 1
+   dt: d
+   data: [-0.008977668364731128,0.07557012320238939,-0.005545773942541918]
